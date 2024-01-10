@@ -9,7 +9,7 @@ class Pessoa(val primeiroNome: String) {
 }
 
 fun main() {
-    quadrado()
+    idadeatual()
 
 }
 
@@ -60,7 +60,6 @@ fun paralelepipido() {
 
 }
 
-
 // Receba o valor de um depósito em poupança. Calcule e mostre o valor após 1 mês de aplicação sabendo que rende 1,3% a. m.
 
 fun poupanca() {
@@ -86,3 +85,47 @@ fun quadrado(){
     println("A soma do quadrado é de $somaquadrado")
 
 }
+
+// Receba 2 números reais. Calcule e mostre a diferença desses valores.
+
+fun numeroreal() {
+    println("Digite o valor de x: ")
+    val x1 = readln().toDouble()
+    println("Digite o valor de y: ")
+    val x2 = readln().toDouble()
+
+        if (x1 > x2) {
+            println("$x1 é maior que $x2")
+        }
+        else {
+            println("$x2 é menor que $x1")
+        }
+}
+
+// Receba o raio de uma circunferência. Calcule e mostre o comprimento da circunferência. (C = 2 * PI * diametro)
+
+fun circunferencia() {
+    println("Digite o diametro da circunferência: ")
+    val diametro = readln().toDouble()
+
+    var compcircunferia = 2 * 3.14 * diametro
+
+    println("O comprimento da circunferência é de $compcircunferia" + "m")
+}
+
+// Receba o ano de nascimento e o ano atual. Calcule e mostre a sua idade e quantos anos terá daqui a 17 anos.
+
+fun idadeatual() {
+    println("Digite o ano nascimento: ")
+    val anonascimento = readln().toDouble()
+    println("Digite o ano atual: ")
+    val anoatual = readln().toDouble()
+
+    var idadeatual = anoatual - anonascimento
+    var idadefutura = anoatual - anonascimento + 17
+
+    println("Sua idade atual é $idadeatual mas daqui 17 anos você terá $idadefutura")
+
+}
+
+// Receba a quantidade de alimento em quilos. Calcule e mostre quantos dias durará esse alimento sabendo que a pessoa consome 50g ao dia.
