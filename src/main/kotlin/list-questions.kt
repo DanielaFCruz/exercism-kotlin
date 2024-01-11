@@ -414,8 +414,3 @@ fun ordemcrescenteexample() {
         println("Digite valores válidos")
     }
 }
-
-
-//while (1,2,3 for em ordem crescente)
- //   então recebo 4 e acrescento por último
-   
