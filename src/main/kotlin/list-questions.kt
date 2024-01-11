@@ -1,17 +1,63 @@
+import java.lang.NullPointerException
 import kotlin.math.pow
 import kotlin.math.sqrt
 
-
-class Pessoa(val primeiroNome: String) {
-    fun correr() {
-        println("Estou correndo $primeiroNome")
-    }
-}
-
 fun main() {
-    idadeatual()
+    ordemcrescente2()
 
 }
+
+// Coletar o valor do lado de um quadrado, calcular sua área e apresentar o resultado.
+
+fun quadrado1() {
+    println("Digite o primeiro lado de um quadrado: ")
+    var lado1 = readln().toDouble()
+    println("Digite o segundo lado de um quadrado: ")
+    var lado2 = readln().toDouble()
+
+    val area = lado1 * lado2
+
+    println("O valor da área do quadrado é de $area")
+}
+
+// Receba o salário de um funcionário e mostre o novo salário com reajuste de 15%.
+
+fun reajuste() {
+    println("Digite o seu salário: ")
+    var salario = readln().toDouble()
+
+    val novosalario = 1.15 * salario
+
+    println("O valor do seu salário reajustado em 15% é de $novosalario")
+
+}
+
+// Receba a base e a altura de um triângulo. Calcule e mostre a sua área.
+
+fun triangulo() {
+    println("Digite a base do triângulo: ")
+    var base = readln().toDouble()
+    println("Digite a altura do triângulo: ")
+    var altura = readln().toDouble()
+
+    val area = (altura * base) / 2
+
+    println("A área do triângulo é de $area")
+
+}
+
+// Receba a temperatura em graus Celsius. Calcule e mostre a sua temperatura convertida em fahrenheit F = (9*C+160) /5.
+
+fun celsius() {
+    println("Digite a temperatura em Celsius: ")
+    var celsius = readln().toDouble()
+
+    val fahrenheit = (celsius * 1.8) + 32
+
+    println("O valor da temperatura é $fahrenheit")
+}
+
+// Receba os coeficientes A, B e C de uma equação do 2º grau (AX²+BX+C=0). Calcule e mostre as raízes reais (considerar que a equação possue2 raízes).
 
 fun equacao() {
     println("Digite o coeficiente a: ")
@@ -29,6 +75,8 @@ fun equacao() {
     println("As raízes reais são $x1 e $x2")
 
 }
+
+// Receba os valores em x e y. Efetua a troca de seus valores e mostre seus conteúdos.
 
 fun trocaV() {
     println("Digite o valor de x: ")
@@ -129,3 +177,246 @@ fun idadeatual() {
 }
 
 // Receba a quantidade de alimento em quilos. Calcule e mostre quantos dias durará esse alimento sabendo que a pessoa consome 50g ao dia.
+
+fun alimento() {
+    println("Digite a quantidade de alimentos em quilos: ")
+    var qtdaquilos = readln().toDoubleOrNull()
+
+    if (qtdaquilos != null && qtdaquilos > 0) {
+        val gramasdia = 50.0
+        val qtdagramas = qtdaquilos * 1000
+        val diasduracao = qtdagramas / gramasdia
+
+        println("O alimento durará aproximadamente $diasduracao dias")
+        }
+      else {
+        println("Não é válido, por favor digite um número válido")
+    }
+}
+
+// Receba 2ângulos de um triângulo. Calcule e mostre o valor do 3º ângulo. Caso seja a hipotenusa: c = √(a² + b²)
+
+fun angulotriangulo() {
+    println("Digite o valor do primeiro ângulo: ")
+    var primeiroanguloA = readln().toDouble()
+    println("Digite o valor do segundo ângulo: ")
+    var segundoanguloB = readln().toDouble()
+
+    if (primeiroanguloA > 0 && segundoanguloB > 0) {
+        val terceiroanguloH = (primeiroanguloA.pow(2.0) + segundoanguloB.pow(2.0)).pow(2.0)
+
+        println("O valor do terceiro angulo é de $terceiroanguloH")
+    } else {
+        println("Por favor, digite um valor válido")
+    }
+
+
+}
+
+// Receba os valores de 2 catetos de um triângulo retângulo. Calcule e mostre a hipotenusa. h = √(a² + b²)
+
+fun hipotenusa() {
+    println("Digite o valaor do primeiro cateto: ")
+    var cateto1 = readln().toDouble()
+    println("Digite o valaor do segundo cateto: ")
+    var cateto2 = readln().toDouble()
+
+    val hipotenusa = sqrt(cateto1 * cateto1 + cateto2 * cateto2)
+
+    println("A hipotenusa é $hipotenusa")
+}
+
+// Exercício 16
+
+fun salario() {
+    println("Digite a quantidade de horas trabalhadas: ")
+    var horastrabalhadas = readln().toDouble()
+    println("Digite o valor por hora: ")
+    var valorhora = readln().toDouble()
+    println("Digite o percentual de desconto: ")
+    var percentualdesconto = readln().toDouble()
+    println("Digite o número de dependentes.: ")
+    var dependentes = readln().toDouble()
+
+    if (horastrabalhadas != null && valorhora != null && percentualdesconto != null && dependentes != null) {
+        val salariobruto = horastrabalhadas * valorhora
+        val desconto = (percentualdesconto / 100) * salariobruto
+        val salarioliquido = (salariobruto - desconto) + (dependentes * 100)
+
+        println("O salário a receber é de $salarioliquido")
+        } else {
+            println("Digite um número válido")
+    }
+}
+
+// Calcule a quantidade de litros gastos em uma viagem, sabendo que o automóvel faz 12 km/l. Receber o tempo de percurso e a velocidade média
+
+fun litrosgastos() {
+    println("Digite o tempo do percurso: ")
+    var tempopercurso = readln().toDouble()
+    println("Digite a velocidade média: ")
+    var velocidademedia = readln().toDouble()
+
+    val litros = (tempopercurso * velocidademedia) / 12
+
+    println("A quantidade de litros gastos é de $litros")
+}
+
+// Receba 2 valores inteiros. Calcule e mostre o resultado da diferença do maior pelo menos valor.
+
+fun diferencainteiro() {
+    println("Digite o primeiro valor: ")
+    var primeirovalor = readln().toDouble()
+    println("Digite a segundo valor: ")
+    var segundovalor = readln().toDouble()
+
+    if (primeirovalor != null && segundovalor != null) {
+        val diferenca = if (primeirovalor > segundovalor)
+            primeirovalor - segundovalor
+        else {
+            segundovalor - primeirovalor
+        }
+        println("A diferença entre o maior e o menor valor é: $diferenca")
+        } else  {
+        println("Escreva um número válido")
+    }
+}
+
+// Receba 2 valores reais. Calcule e mostre o maior deles.
+
+fun real() {
+    println("Digite o primeiro valor real: ")
+    var primeiroreal = readln().toDouble()
+    println("Digite a segundo valor real: ")
+    var segundoreal = readln().toDouble()
+
+    if (primeiroreal != null && segundoreal != null) {
+        val diferenca = if (primeiroreal > segundoreal)
+            println("$primeiroreal é maior que $segundoreal")
+        else {
+            println("$segundoreal é maior que $primeiroreal")
+        }
+    } else {
+        println("Digite um número válido")
+    }
+}
+
+// Exercício 20
+
+fun equacaosegundograu() {
+    println("Digite o coeficiente a: ")
+    var coeficienteA = readln().toDouble()
+    println("Digite o coeficiente b: ")
+    var coeficienteB = readln().toDouble()
+    println("Digite o coeficiente c: ")
+    var coeficienteC = readln().toDouble()
+
+    if (coeficienteA != null && coeficienteB != null && coeficienteC != null){
+        val delta = coeficienteB.pow(2.0) - (4 * coeficienteA * coeficienteC)
+            if (delta >= 0){
+                val x1 = (- coeficienteB + sqrt(delta)) / 2 * coeficienteA
+                val x2 = (- coeficienteB - sqrt(delta)) / 2 * coeficienteA
+
+                println("As raízes reais são: x1: $x1 e x2: $x2")
+                } else {
+                    println("A equação não possuí raízes reais")
+            }
+    } else {
+        println("Digite um valor válido")
+    }
+}
+
+// Exercício 21:
+
+fun notasbimestrais() {
+    println("Digite sua nota de matemática: ")
+    var notamatematica = readln().toDouble()
+    println("Digite sua nota de física: ")
+    var notafisica = readln().toDouble()
+    println("Digite sua nota de química: ")
+    var notaquimica = readln().toDouble()
+    println("Digite sua nota de português: ")
+    var notaportugues = readln().toDouble()
+
+    if (notamatematica != null && notafisica != null && notaquimica != null && notaportugues != null) {
+        val media = (notamatematica + notafisica + notaquimica + notaportugues) / 4
+
+        println("A média aritmetica é $media")
+
+        when {
+            media >= 6.0 -> println("APROVADO")
+            media >= 3.0 -> println("EXAME")
+            else -> println("RETIDO")
+            }
+    }
+
+}
+
+// Receba 2 valores inteiros e diferentes. Mostre seus valores em ordem crescente.
+
+fun ordemcrescente() {
+    println("Digite o primeiro valor inteiro: ")
+    var primeirovalor = readln().toDouble()
+    println("Digite o segundo valor inteiro: ")
+    var segundovalor = readln().toDouble()
+
+    if (primeirovalor != null && segundovalor != null){
+        val crescente = if (primeirovalor > segundovalor) {
+            Pair(primeirovalor, segundovalor)
+        } else {
+            Pair(segundovalor, primeirovalor)
+        }
+        println("Os valores em ordem crescente são: $crescente")
+    }
+
+}
+
+// Receba 3 valores obrigatoriamente em ordem crescente e um 4º valor não necessariamente em ordem. Mostre os 4 números em ordem crescente.
+
+fun ordemcrescente2() {
+    println("Digite o primeiro valor inteiro: ")
+    var primeirovalor = readLine()?.toDoubleOrNull()
+    println("Digite o segundo valor inteiro: ")
+    var segundovalor = readLine()?.toDoubleOrNull()
+    println("Digite o terceiro valor inteiro: ")
+    var terceirovalor = readLine()?.toDoubleOrNull()
+    println("Digite o segundo valor inteiro: ")
+    var quartovalor = readLine()?.toDoubleOrNull()
+
+    if (primeirovalor != null && segundovalor != null && terceirovalor != null && quartovalor != null && primeirovalor > segundovalor && segundovalor > terceirovalor){
+        val crescente = when {
+            quartovalor < primeirovalor -> listOf(quartovalor, primeirovalor, segundovalor, terceirovalor)
+            quartovalor < segundovalor -> listOf(primeirovalor, quartovalor, segundovalor, terceirovalor)
+            quartovalor < terceirovalor -> listOf(primeirovalor, segundovalor, quartovalor, terceirovalor)
+            else -> listOf(primeirovalor, segundovalor, terceirovalor, quartovalor)
+        }
+            println("Segue ordem crescente ${crescente[0]}, ${crescente[1]}, ${crescente[2]}, ${crescente[3]}")
+        } else {
+            println("Digite valores válidos")
+    }
+}
+
+fun ordemcrescenteexample() {
+    println("Digite o primeiro valor inteiro: ")
+    val primeirovalor = readln().toDouble()
+    println("Digite o segundo valor inteiro: ")
+    val segundovalor = readln().toDouble()
+    println("Digite o terceiro valor inteiro: ")
+    val terceirovalor = readln().toDouble()
+    println("Digite o segundo valor inteiro: ")
+    val quartovalor = readln().toDouble()
+
+    if (primeirovalor != null && segundovalor != null && terceirovalor != null && quartovalor != null && primeirovalor > segundovalor && segundovalor > terceirovalor){
+        val crescente = listOf(primeirovalor, segundovalor, terceirovalor, quartovalor).sorted()
+
+        println("Segue ordem crescente: $primeirovalor, $segundovalor, $terceirovalor, $quartovalor")
+    } else {
+        println("Digite valores válidos")
+    }
+}
+
+
+//while (1,2,3 for em ordem crescente)
+ //   então recebo 4 e acrescento por último
+   //     se não
+     //    por favor digita em ORDEM crescente
