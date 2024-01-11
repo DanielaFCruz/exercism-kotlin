@@ -419,4 +419,4 @@ fun ordemcrescenteexample() {
 //while (1,2,3 for em ordem crescente)
  //   então recebo 4 e acrescento por último
    //     se não
-     //    por favor digita em ORDEM crescente
+   
