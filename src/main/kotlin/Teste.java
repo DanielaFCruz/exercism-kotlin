@@ -6,6 +6,6 @@ public class Teste {
     }
 
     public static String toDouble() {
-        return "renan";
+        return "teste";
     }
 }
