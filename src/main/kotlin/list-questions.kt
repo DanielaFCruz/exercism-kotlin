@@ -374,28 +374,36 @@ fun ordemcrescente() {
 // Receba 3 valores obrigatoriamente em ordem crescente e um 4º valor não necessariamente em ordem. Mostre os 4 números em ordem crescente.
 
 fun ordemcrescente2() {
-    println("Digite o primeiro valor inteiro: ")
-    var primeirovalor = readLine()?.toDoubleOrNull()
-    println("Digite o segundo valor inteiro: ")
-    var segundovalor = readLine()?.toDoubleOrNull()
-    println("Digite o terceiro valor inteiro: ")
-    var terceirovalor = readLine()?.toDoubleOrNull()
-    println("Digite o segundo valor inteiro: ")
-    var quartovalor = readLine()?.toDoubleOrNull()
+    println("Digite o primeiro valor: ")
+    var primeirovalor = readln().toDouble()
+    println("Digite o segundo valor maior que o primero: ")
+    var segundovalor = readln().toDouble()
+    println("Digite o terceiro valor maior que o segundo: ")
+    var terceirovalor = readln().toDouble()
 
-    if (primeirovalor != null && segundovalor != null && terceirovalor != null && quartovalor != null && primeirovalor > segundovalor && segundovalor > terceirovalor){
-        val crescente = when {
-            quartovalor < primeirovalor -> listOf(quartovalor, primeirovalor, segundovalor, terceirovalor)
-            quartovalor < segundovalor -> listOf(primeirovalor, quartovalor, segundovalor, terceirovalor)
-            quartovalor < terceirovalor -> listOf(primeirovalor, segundovalor, quartovalor, terceirovalor)
-            else -> listOf(primeirovalor, segundovalor, terceirovalor, quartovalor)
+    if (primeirovalor < segundovalor && segundovalor < terceirovalor) {
+        println("Digite o quarto valor inteiro: ")
+        var quartovalor = readln().toDouble()
+        if (quartovalor < primeirovalor) {
+            println("$quartovalor, $primeirovalor, $segundovalor, $terceirovalor")
         }
-            println("Segue ordem crescente ${crescente[0]}, ${crescente[1]}, ${crescente[2]}, ${crescente[3]}")
-        } else {
-            println("Digite valores válidos")
-    }
-}
 
+        if (quartovalor > primeirovalor && quartovalor < segundovalor) {
+            println("$primeirovalor, $quartovalor, $segundovalor, $terceirovalor")
+        }
+
+        if (quartovalor > segundovalor && quartovalor < terceirovalor) {
+            println("$primeirovalor, $segundovalor, $quartovalor, $terceirovalor")
+        }
+
+        if (quartovalor > terceirovalor)
+            println("$primeirovalor, $segundovalor, $terceirovalor, $quartovalor")
+
+    } else {
+        println("Os números não foram digitados na ordem crescente")
+    }
+
+    }
 fun ordemcrescenteexample() {
     println("Digite o primeiro valor inteiro: ")
     val primeirovalor = readln().toDouble()
