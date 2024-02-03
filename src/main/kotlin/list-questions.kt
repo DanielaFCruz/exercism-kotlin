@@ -435,3 +435,23 @@ fun divisao() {
         println("$valor não é divisível por 2 e 3")
     }
 }
+
+// Receba a hora de início e de final de um jogo (HH,MM), calcular o tempo do jogo em horas e minutos, sabendo que o tempo máximo é menor que 24 horas e pode começar num dia e terminar noutro.
+
+fun game() {
+    println("Digite a hora de início do jogo: ")
+    var iniciohora = readln().toInt()
+    println("Digite a hora de final do jogo: ")
+    val finalhora = readln().toInt()
+    println("Digite o minuto de inicio do jogo: ")
+    val iniciominuto = readln().toInt()
+    println("Digite o minuto final do jogo: ")
+    var finalminuto = readln().toInt()
+
+    var tempoJogo = (finalhora * 60 + finalminuto) - (iniciohora * 60 + iniciominuto)
+
+    val horas = tempoJogo / 60
+    val minutos = tempoJogo % 60
+
+    println("O tempo de jogo foi de $horas horas e $minutos minutos.")
+}
