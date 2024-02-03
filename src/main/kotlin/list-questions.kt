@@ -422,3 +422,16 @@ fun ordemcrescenteexample() {
         println("Digite valores válidos")
     }
 }
+
+// Receba um valor inteiro. Verifique e mostre se é divisível por 2 e 3.
+
+fun divisao() {
+    println("Digite um valor inteiro: ")
+    var valor = readln().toInt()
+
+    if ((valor % 2 == 0) && (valor % 3 == 0)) {
+        println("$valor é divisível por 2 e 3")
+    } else {
+        println("$valor não é divisível por 2 e 3")
+    }
+}
