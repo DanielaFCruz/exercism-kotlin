@@ -482,3 +482,33 @@ fun inteiros() {
     }
     println(multiplo)
 }
+
+// Receba o número de voltas, a extensão do circuito (em metros) e o tempo de duração (minutos). Calcule e mostre a velocidade média em km/h.
+
+fun VelocidadeMedia (numeroVoltas: Int, extensaoCircuitoMetros: Double, tempoDuracaoMinutos: Double): Double {
+    val distanciaTotalMetros = numeroVoltas * extensaoCircuitoMetros
+    val tempoDuracaoHoras = tempoDuracaoMinutos / 60.0
+    val velocidadeMediaKmPorHora = (distanciaTotalMetros / 1000.0) / tempoDuracaoHoras
+
+    return velocidadeMediaKmPorHora
+}
+
+fun calculo() {
+    println("Digite o número de voltas:")
+    val numeroVoltas = readLine()!!.toInt()
+
+    println("Digite a extensão do circuito em metros:")
+    val extensaoCircuitoMetros = readLine()!!.toDouble()
+
+    println("Digite o tempo de duração em minutos:")
+    val tempoDuracaoMinutos = readLine()!!.toDouble()
+
+    val velocidadeMedia = VelocidadeMedia(numeroVoltas, extensaoCircuitoMetros, tempoDuracaoMinutos)
+
+    println("A velocidade média é de $velocidadeMedia km/h.")
+
+
+
+
+
+}
