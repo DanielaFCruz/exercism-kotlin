@@ -455,3 +455,30 @@ fun game() {
 
     println("O tempo de jogo foi de $horas horas e $minutos minutos.")
 }
+
+// Receba 2 números inteiros. Verifique e mostre se o maior número é múltiplo do menor.
+
+fun inteiros() {
+    println("Digite o primeiro número inteiro:")
+    val numero1 = readln().toInt()
+    println("Digite o segundo número inteiro:")
+    val numero2 = readln().toInt()
+
+    val maior = if (numero1 > numero2) {
+            println("$numero1")
+        } else {
+            println("$numero2")
+        }
+    val menor = if (numero1 < numero2) {
+            println("$numero1")
+        } else {
+            println("$numero2")
+        }
+
+    val multiplo = if (menor % maior == 0) {
+            println("$maior é múltiplo de $menor.")
+    } else {
+            println("$maior não é múltiplo de $menor.")
+    }
+    println(multiplo)
+}
